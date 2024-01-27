@@ -1,0 +1,79 @@
+.texte1 {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 2px solid #3498db;
+  border-radius: 10px;
+  background-color: #ecf0f1;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.texte1:hover {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.texte2 {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 2px solid #e74c3c; /* Red color */
+  border-radius: 10px;
+  background-color: #ecf0f1;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.texte2:hover {
+  background-color: #e74c3c; /* Red color on hover */
+  color: #fff;
+}
+
+.données_structurées {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 2px solid #2ecc71; /* Green color */
+  border-radius: 10px;
+  background-color: #ecf0f1;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.données_structurées:hover {
+  background-color: #2ecc71; /* Green color on hover */
+  color: #fff;
+}
+
+.internet {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 2px solid #9b59b6; /* Purple color */
+  border-radius: 10px;
+  background-color: #ecf0f1;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.internet:hover {
+  background-color: #9b59b6; /* Purple color on hover */
+  color: #fff;
+}
+
+.web {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 2px solid #e67e22; /* Orange color */
+  border-radius: 10px;
+  background-color: #ecf0f1;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.web:hover {
+  background-color: #e67e22; /* Orange color on hover */
+  color: #fff;
+}

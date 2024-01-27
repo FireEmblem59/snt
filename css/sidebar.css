@@ -1,0 +1,70 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  transition: opacity 0.5s ease-in-out;
+}
+
+.sidecontainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: 0.5s;
+  display: flex;
+  pointer-events: none; /* Allow mouse events to pass through the container */
+}
+
+.sidebar {
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: #fff;
+  padding-top: 20px;
+  position: fixed;
+  right: -250px;
+  transition: right 0.5s;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h2 {
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px;
+  text-align: center;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto; /* Enable vertical scrollbar for the content */
+}
+
+.content h2 {
+  color: #333;
+}
+
+.sidecontainer.open .sidebar {
+  right: 0;
+}
+
+.sidecontainer.open {
+  pointer-events: auto; /* Enable mouse events for the container when open */
+}

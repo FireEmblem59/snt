@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Site du BG</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/texts.css" />
+    <link rel="stylesheet" href="/css/darkmode.css" />
+    <link rel="stylesheet" href="/css/lightmode.css" />
+    <link rel="stylesheet" href="/css/sidebar.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script>
+      function preloadImages() {
+        var images = [
+          "/images/donnees_structures.jpeg",
+          "/images/internet.jpeg",
+          "/images/le_web.jpeg",
+        ];
+
+        for (var i = 0; i < images.length; i++) {
+          var img = new Image();
+          img.src = images[i];
+        }
+      }
+
+      window.onload = preloadImages;
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="btn">
+          <div class="btn__indicator">
+            <div class="btn__icon-container">
+              <i class="btn__icon fa-solid"></i>
+            </div>
+          </div>
+        </div>
+
+        <script src="/js/dark_light.js"></script>
+
+        <div class="sidecontainer" id="sidecontainer">
+          <div class="content" id="content"></div>
+          <div class="sidebar" id="sidebar">
+            <h2>Sidebar</h2>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <script src="/js/sidebar.js"></script>
+
+        <h1 id="clickText">S.N.T.</h1>
+        <script src="/js/snt_click.js"></script>
+
+        <nav>
+          <ul>
+            <li>
+              <a href="donnees_structures.html">Les données structurées</a>
+            </li>
+            <li><a href="internet.html">Internet</a></li>
+            <li><a href="le_web.html">Le Web</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="texte1">
+        <p>
+          Bienvenue dans notre univers numérique ! Aujourd'hui, au sein de
+          l'espace informatique, nous entamons un voyage pour dévoiler le monde
+          complexe du
+          <strong>HTML</strong> et du <strong>CSS</strong>. Rejoignez-nous dans
+          cette salle de classe virtuelle, où nous n'explorerons pas seulement,
+          mais révélerons véritablement l'essence de ces langages de codage à
+          travers l'objectif des <strong><em>balises</em></strong> et des
+          <strong><em>styles</em></strong
+          >. Préparez-vous à plonger dans l'épine dorsale du développement web,
+          où la créativité rencontre la fonctionnalité. Bienvenue dans une
+          expérience transformative où la <strong>connaissance</strong> prend
+          forme, et les possibilités sont aussi illimitées que l'horizon
+          numérique.
+        </p>
+      </div>
+
+      <div class="texte2">
+        <p>
+          Les <strong><em>Sciences Numériques et Technologie (SNT)</em></strong>
+          désignent une discipline éducative qui explore le domaine des
+          <strong
+            ><em
+              >technologies de l'information et de la communication (TIC)</em
+            ></strong
+          >. Intégrée dans le programme éducatif français, la
+          <strong><em>SNT</em></strong> vise à familiariser les élèves avec les
+          concepts fondamentaux liés à l' <strong><em>informatique</em></strong
+          >, à la <strong><em>programmation</em></strong
+          >, aux <strong><em>réseaux</em></strong
+          >, à la <strong><em>sécurité informatique</em></strong
+          >, et à d'autres aspects essentiels des
+          <strong><em>sciences numériques</em></strong
+          >.
+        </p>
+
+        <p>
+          Cette matière vise à développer la compréhension des élèves face aux
+          enjeux contemporains liés à l'utilisation des
+          <strong><em>technologies</em></strong
+          >. En mettant l'accent sur la
+          <strong><em>pensée algorithmique</em></strong
+          >, la <strong><em>résolution de problèmes</em></strong> et la
+          compréhension des <strong><em>systèmes informatiques</em></strong
+          >, la <strong><em>SNT</em></strong> prépare les étudiants à s'engager
+          de manière critique et éclairée dans un monde de plus en plus
+          numérisé. Elle favorise également le développement de compétences
+          essentielles dans le domaine de la
+          <strong><em>culture numérique</em></strong
+          >, permettant aux étudiants de naviguer avec confiance dans l'univers
+          numérique en constante évolution.
+        </p>
+      </div>
+    </main>
+
+    <footer class="footer" id="footer">
+      <div class="container">
+        <small>&copy; 2024 Site du BG. Tous droits réservés.</small>
+      </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+  </body>
+</html>
