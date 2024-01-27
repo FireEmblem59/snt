@@ -2,11 +2,19 @@ let canvas = document.getElementById("game");
 let context = canvas.getContext("2d");
 let initialScreen = document.getElementById("initial-screen");
 let playButton = document.getElementById("play-button");
+let canvasBorder = document.getElementById("game");
+let scoreElement = document.getElementById("score");
+let highScoreElement = document.getElementById("high-score");
+var trophyImage = document.getElementById("trophy");
+var appleImage = document.getElementById("apple");
 
 let grid = 16;
 let count = 0;
 let score = 0;
-let snakeSpeed = 8; // Adjust the speed as needed
+let snakeSpeed = 10; // Adjust the speed as needed
+
+let end = false;
+let showingGameOverScreen = false;
 
 // Retrieve high score from local storage, or set to 0 if not available
 let highScore = localStorage.getItem("snakeHighScore") || 0;
@@ -36,6 +44,14 @@ function showGame() {
 
 function loop() {
   requestAnimationFrame(loop);
+
+  if (end) {
+    // If the game is over, stop looping
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    canvasBorder.style.border = "0";
+    endGame(); // Call endGame function when collision occurs
+    return;
+  }
 
   if (++count < snakeSpeed) {
     return;
@@ -89,7 +105,7 @@ function loop() {
 
     for (let i = index + 1; i < snake.cells.length; i++) {
       if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
-        endGame(); // Call endGame function when collision occurs
+        end = true;
       }
     }
   });
@@ -104,55 +120,37 @@ function updateHighScore() {
 }
 
 function showGameOverScreen() {
-  // Create game-over screen elements
-  var gameOverScreen = document.createElement("div");
+  // Create a div element for the game over screen
+  let gameOverScreen = document.createElement("div");
   gameOverScreen.id = "game-over-screen";
+  gameOverScreen.classList.add("game-over-screen");
 
-  var snakeImage = document.createElement("img");
-  snakeImage.src = "/images/snake.png";
-  snakeImage.alt = "Snake Image";
-  snakeImage.classList.add("game-over-image");
+  trophyImage.style.display = "block";
 
-  var trophyImage = document.createElement("img");
-  trophyImage.src = "/images/trophy.png";
-  trophyImage.alt = "Trophy Image";
-  trophyImage.classList.add("game-over-image");
+  document.getElementById("high-score").innerHTML = highScore;
+  document.getElementById("high-score").style.top = "40%";
+  document.getElementById("high-score").style.left = "40%";
 
-  var appleImage = document.createElement("img");
-  appleImage.src = "/images/apple.png";
-  appleImage.alt = "Apple Image";
-  appleImage.classList.add("game-over-image");
+  appleImage.style.display = "block";
 
-  var snakeScore = document.createElement("p");
-  snakeScore.textContent = "Your Score: " + score;
+  document.getElementById("score").innerHTML = score;
+  document.getElementById("score").style.top = "40%";
+  document.getElementById("score").style.left = "60%";
 
-  var highScoreText = document.createElement("p");
-  highScoreText.textContent = "High Score: " + highScore;
-
-  var playAgainButton = document.createElement("button");
+  // Create and add the play again button
+  let playAgainButton = document.createElement("button");
   playAgainButton.textContent = "Play Again";
   playAgainButton.addEventListener("click", resetAndStartGame);
 
-  // Append elements to the game-over screen
-  gameOverScreen.appendChild(snakeImage);
-
-  var scoresContainer = document.createElement("div");
-  scoresContainer.classList.add("scores-container");
-  scoresContainer.appendChild(trophyImage);
-  scoresContainer.appendChild(highScoreText);
-  scoresContainer.appendChild(appleImage);
-  scoresContainer.appendChild(snakeScore);
-
-  gameOverScreen.appendChild(scoresContainer);
   gameOverScreen.appendChild(playAgainButton);
 
-  // Append the game-over screen to the body
+  // Append the game over screen to the body element
   document.body.appendChild(gameOverScreen);
 }
 
 function resetAndStartGame() {
   // Remove the game-over screen
-  var gameOverScreen = document.getElementById("game-over-screen");
+  let gameOverScreen = document.getElementById("game-over-screen");
   if (gameOverScreen) {
     gameOverScreen.parentNode.removeChild(gameOverScreen);
   }
@@ -165,9 +163,11 @@ function resetAndStartGame() {
 function endGame() {
   // Stop the game loop
   cancelAnimationFrame(loop);
-
-  // Display the game-over screen
-  showGameOverScreen();
+  //Display the game-over screen
+  if (showingGameOverScreen === false) {
+    showGameOverScreen();
+    showingGameOverScreen = true;
+  }
 }
 
 function resetGame() {

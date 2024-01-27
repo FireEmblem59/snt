@@ -39,6 +39,44 @@ canvas {
   font-size: 18px;
 }
 
+#snake {
+  position: absolute;
+  top: -30%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Center the element both horizontally and vertically */
+  color: white;
+  font-size: 18px;
+}
+
+#trophy {
+  display: none;
+  position: absolute;
+  top: 30%; /* Center vertically */
+  left: 40%; /* Center horizontally */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Center the element both horizontally and vertically */
+  color: white;
+  font-size: 18px;
+}
+
+#apple {
+  display: none;
+  position: absolute;
+  top: 30%; /* Center vertically */
+  left: 60%; /* Center horizontally */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Center the element both horizontally and vertically */
+  color: white;
+  font-size: 18px;
+}
+
 #initial-screen {
   position: absolute;
   top: 50%;
@@ -71,4 +109,37 @@ canvas {
   color: white;
   border: none;
   border-radius: 5px;
+}
+#game-over-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.trophy-image {
+  width: 20%;
+  height: auto;
+  transform: translate(-10%, -50%);
+}
+.snake-image {
+  width: 20%;
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+
+.apple-image {
+  width: 20%;
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+
+.play-again-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
