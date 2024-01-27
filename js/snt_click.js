@@ -17,7 +17,7 @@ clickText.addEventListener("click", () => {
 
   if (clickCounter === 5) {
     // Open another HTML page
-    window.location.href = "/html/snake.html";
+    window.location.href = "html/snake.html";
     // Optionally, you can reset the counter or perform other actions here
     clickCounter = 0;
     clickStartTime = now;
